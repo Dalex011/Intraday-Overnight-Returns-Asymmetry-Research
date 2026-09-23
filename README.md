@@ -25,8 +25,8 @@ Universe: SPY + 11 SPDR sector ETFs, equal-weighted portfolio, daily data, ≈10
 - It's not free lunch. Overnight returns show considerable negative skewness (delta -2.40 vs. intraday skew) and heavy kurtosis values; 44.26 overnight vs. 6.85 intraday, signaling a substantial risk of black-swan events which can be specially catastrophic for leveraged investors. This increased risk is consistent with risk-premium theories as compensation for higher returns.
 
 ## **Methodology**
-- Sessions: overnight return =(Open_t - Close_t-1) / Close_t-1; intraday return = (Close_t - Open_t) / Open_t, based on historical prices adjsuted for splits.
-- Risk-free rate: annualized ≈5% (3-month T-bill proxy), compounded to a daily rate. An earlier version of this analysis double counted the risk-free rate by subtracting it from both sessions independently, this has been corrected by time-weighting the daily rate according to session lenght (17.5/24 for overnight, 6.5/24 for intraday).
+- Sessions: overnight return =(Open_t - Close_t-1) / Close_t-1; intraday return = (Close_t - Open_t) / Open_t, based on historical prices adjusted for splits.
+- Risk-free rate: annualized ≈5% (3-month T-bill proxy), compounded to a daily rate. An earlier version of this analysis double counted the risk-free rate by subtracting it from both sessions independently, this has been corrected by time-weighting the daily rate according to session length (17.5/24 for overnight, 6.5/24 for intraday).
 - Sharpe ratio: E[Rp - Rf] / σp * √252.
 - Jensen's Alpha / Appraisal ratio: OLS regression of Rp - Rf = α + β(Rm - Rf) + ε
 run separately per session, with SPY as the market benchmark. Appraisal ratio = (α*252) / (σ_ε * √252).
